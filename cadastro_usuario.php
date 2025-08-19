@@ -26,7 +26,9 @@
         $stmt -> bindParam(":id_perfil", $id_perfil);
 
         if ($stmt -> execute()) {
-
+            echo "<script> alert('Usuário cadastrado com sucesso!'); </script>";
+        } else {
+            echo "<script> alert('Erro ao cadastrar o usuário!'); </script>";
         }
     }
 ?>
@@ -45,7 +47,26 @@
 
     <form action="cadastro_usuario.php" method="POST">
         <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome">
+        <input type="text" name="nome" id="nome" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" id="senha" required>
+
+        <label for="id_perfil">Perfil:</label>
+        <select name="id_perfil" id="id_perfil">
+            <option value="1">Administrador</option>
+            <option value="2">Secretária</option>
+            <option value="3">Almoxarife</option>
+            <option value="4">Cliente</option>
+        </select>
+
+        <button type="submit">Cadastrar</button>
+        <button type="reset">Cancelar</button>
     </form>
+
+    <a href="principal.php">Voltar</a>
 </body>
 </html>
