@@ -47,6 +47,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <?php include_once 'menu_navbar.php'; ?>
+
     <h2>Lista de Usuários</h2>
 
     <!-- FORMULÁRIO PARA BUSCAR USUÁRIOS -->

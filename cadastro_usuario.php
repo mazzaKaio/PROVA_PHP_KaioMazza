@@ -43,6 +43,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <?php include_once 'menu_navbar.php'; ?>
+
     <h2>Cadastro Usuário</h2>
 
     <form action="cadastro_usuario.php" method="POST">
