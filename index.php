@@ -33,7 +33,7 @@
             }
         } else {
             // LOGIN INVÁLIDO
-            echo "<script> alert('E-mail ou senha incorretos!'); window.location.href='login.php'; </script>";
+            echo "<script> alert('E-mail ou senha incorretos!'); window.location.href='index.php'; </script>";
         }
     }
 ?>
