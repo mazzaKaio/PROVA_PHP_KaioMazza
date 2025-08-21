@@ -33,9 +33,9 @@
             if ($stmt -> execute()) {
                 session_destroy(); // FINALIZA A SESSÃO
 
-                echo "<script> alert('Senha alterada com sucesso! Faça o login novamente.'); window.location.href='login.php'; </script>";
+                echo "<script> alert('Senha alterada com sucesso! Faça o login novamente.'); window.location.href='index.php'; </script>";
             } else {
-                echo "<script> alert('Falha ao alterar senha!'); window.location.href='login.php'; </script>";
+                echo "<script> alert('Falha ao alterar senha!'); window.location.href='index.php'; </script>";
             }
         }
     }

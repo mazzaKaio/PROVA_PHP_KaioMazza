@@ -47,6 +47,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <?php include_once 'menu_navbar.php'; ?>
+
     <h2>Excluir Usuário</h2>
 
     <?php if(!empty($usuarios)): ?>
