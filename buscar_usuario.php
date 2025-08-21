@@ -60,7 +60,7 @@
     </form>
 
     <?php if(!empty($usuarios)): ?>
-        <table border>
+        <table class="table">
             <tr>
                 <th>ID</th>
                 <th>Nome</th>

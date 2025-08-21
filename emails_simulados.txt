@@ -22,3 +22,7 @@ Para: grace@grace
 Olá! Sua nova senha temporária é: ra5nMCg2
 
 ----------------------
+Para: admin@admin
+Olá! Sua nova senha temporária é: jiSAwFzx
+
+----------------------

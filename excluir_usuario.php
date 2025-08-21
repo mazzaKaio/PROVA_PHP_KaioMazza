@@ -52,7 +52,7 @@
     <h2>Excluir Usuário</h2>
 
     <?php if(!empty($usuarios)): ?>
-        <table border>
+        <table class="table">
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
