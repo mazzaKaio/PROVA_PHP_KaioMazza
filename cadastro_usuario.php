@@ -50,7 +50,7 @@
 
     <form action="cadastro_usuario.php" method="POST">
         <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome" pattern="[A-Za-z0-9]" title="Não são permitidos símbolos especiais." required onkeypress="mascara(this, somentetexto)">
+        <input type="text" name="nome" id="nome" required onkeypress="mascara(this, somentetexto)">
 
         <label for="email">E-mail:</label>
         <input type="email" name="email" id="email" required>

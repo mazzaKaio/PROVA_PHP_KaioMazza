@@ -45,7 +45,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <h2>Login</h2>
@@ -60,6 +60,6 @@
         <button type="submit">Entrar</button>
     </form>
 
-    <p><a href="recuperar_senha.php">Esqueci minha senha</a></p>
+    <p><a class="btn-a" href="recuperar_senha.php">Esqueci minha senha</a></p>
 </body>
 </html>

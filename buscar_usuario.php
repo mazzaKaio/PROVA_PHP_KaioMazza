@@ -91,7 +91,7 @@
                 </table>
             </div>
     <?php else: ?>
-        <p>Nenhum usuário encontrado!</p>
+        <p class="aviso">Nenhum usuário encontrado!</p>
     <?php endif; ?>
 
     <a class="btn-voltar" href="principal.php">Voltar</a>
