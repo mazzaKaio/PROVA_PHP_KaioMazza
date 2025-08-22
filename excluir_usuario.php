@@ -13,7 +13,9 @@
     $usuarios = null;
 
     // BUSCA TODOS OS USUARIOS CADASTRADOS EM ORDEM ALFABETICA
-    $query = "SELECT * FROM usuario ORDER BY nome ASC";
+    $query = "SELECT u.*, p.nome_perfil FROM usuario as u
+    INNER JOIN perfil as p WHERE u.id_perfil = p.id_perfil
+    ORDER BY nome ASC";
     
     $stmt = $pdo -> prepare($query);
     $stmt -> execute();
@@ -44,7 +46,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excluir Usuário</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <?php include_once 'menu_navbar.php'; ?>
@@ -52,31 +54,33 @@
     <h2>Excluir Usuário</h2>
 
     <?php if(!empty($usuarios)): ?>
-        <table class="table">
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Perfil</th>
-                <th>Ações</th>
-            </tr>
-            
-            <?php foreach($usuarios as $usuario): ?>
+        <div class="tabela-container">
+            <table class="tabela">
                 <tr>
-                    <td> <?= htmlspecialchars($usuario['id_usuario']); ?></td>
-                    <td> <?= htmlspecialchars($usuario['nome']); ?></td>
-                    <td> <?= htmlspecialchars($usuario['email']); ?></td>
-                    <td> <?= htmlspecialchars($usuario['id_perfil']); ?></td>
-                    <td> 
-                        <a href="excluir_usuario.php?id=<?= htmlspecialchars($usuario['id_usuario']) ?>" onclick="return confirm('Você tem certea que deseja excluí-lo?')">Excluir</a>
-                    </td>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Perfil</th>
+                    <th>Ações</th>
                 </tr>
-            <?php endforeach; ?>
-        </table>
+                
+                <?php foreach($usuarios as $usuario): ?>
+                    <tr>
+                        <td> <?= htmlspecialchars($usuario['id_usuario']); ?></td>
+                        <td> <?= htmlspecialchars($usuario['nome']); ?></td>
+                        <td> <?= htmlspecialchars($usuario['email']); ?></td>
+                        <td> <?= htmlspecialchars($usuario['nome_perfil']); ?></td>
+                        <td> 
+                            <a class="btn-excluir" href="excluir_usuario.php?id=<?= htmlspecialchars($usuario['id_usuario']) ?>" onclick="return confirm('Você tem certea que deseja excluí-lo?')">Excluir</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
     <?php else: ?>
         <p>Nenhum consagrado encontrado!</p>
     <?php endif; ?>
 
-    <a href="principal.php">Voltar</a>
+    <a class="btn-voltar" href="principal.php">Voltar</a>
 </body>
 </html>

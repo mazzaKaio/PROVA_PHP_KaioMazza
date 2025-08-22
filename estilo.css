@@ -35,6 +35,20 @@ header {
     text-align: right;
 }
 
+p {
+    max-width: 450px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 45px;
+    color: #8d100c;
+    font-size: 20px;
+    background-color: #ff9494;
+    padding: 5px;
+    border: 1px solid;
+    border-color: #8d100c;
+    border-radius: 7px;
+}
+
 .logout button {
     background-color: #d9534f;
     color: white;
@@ -152,6 +166,51 @@ select {
     font-size: 16px;
 }
 
+.btn-a {
+    border-radius: 9px;
+    color: white;
+    background-color: #007bff;
+    padding: 8px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-a:hover {
+    background-color: #0056b3;
+}
+
+.btn-excluir {
+    border-radius: 9px;
+    color: white;
+    background-color: #df3630;
+    padding: 8px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-excluir:hover {
+    background-color: #b8231e;
+}
+
+.btn-voltar {
+    max-width: 150px;
+    display: block;
+    margin: auto;
+    border-radius: 9px;
+    color: white;
+    background-color: #007bff;
+    padding: 8px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-voltar:hover {
+    background-color: #0056b3;
+}
+
 /* Ajusta os botões */
 button {
     width: 80%;
@@ -169,12 +228,44 @@ button:hover {
     background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
 }
 
-.table {
-    width: 750px;
-    margin: 0 auto;
-    padding: 9px;
-    border: 2px solid #ccc;
-    border-radius: 7px;
+.tabela-container {
+    max-width: 1200px;
+    max-height: 400px;
+    margin: 40px auto;
+    overflow-y: auto;
+    border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-collapse: collapse;
+    background-color: white;
 }
+
+.tabela {
+    width: 100%;
+    border: 2px;
+    border-collapse: collapse;
+    border-top: 8px solid #fff;
+    border-bottom: 8px solid #fff;
+}
+
+.tabela th,
+.tabela td{
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #cfcfcf;
+}
+
+.tabela th{
+    color: white;
+    background-color: #007bff;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    border-bottom: black solid;
+    border-color: black;
+}
+
+.tabela tr:hover{
+    background-color: #ccc;
+}
+
+

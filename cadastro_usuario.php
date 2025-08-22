@@ -25,10 +25,11 @@
         $stmt -> bindParam(":senha", $senha);
         $stmt -> bindParam(":id_perfil", $id_perfil);
 
-        if ($stmt -> execute()) {
+        try {
+            $stmt -> execute();
             echo "<script> alert('Usuário cadastrado com sucesso!'); </script>";
-        } else {
-            echo "<script> alert('Erro ao cadastrar o usuário!'); </script>";
+        } catch (PDOException $e) {
+            echo "<script> alert('Erro ao cadastrar o usuário! Verifique as informações inseridas.'); </script>";
         }
     }
 ?>
@@ -40,7 +41,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Usuário</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <?php include_once 'menu_navbar.php'; ?>
@@ -49,7 +50,7 @@
 
     <form action="cadastro_usuario.php" method="POST">
         <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome" required>
+        <input type="text" name="nome" id="nome" pattern="[A-Za-z0-9]" title="Não são permitidos símbolos especiais." required onkeypress="mascara(this, somentetexto)">
 
         <label for="email">E-mail:</label>
         <input type="email" name="email" id="email" required>
@@ -69,6 +70,8 @@
         <button type="reset">Cancelar</button>
     </form>
 
-    <a href="principal.php">Voltar</a>
+    <a class="btn-voltar" href="principal.php">Voltar</a>
+
+    <script src="validacoes.js"></script>
 </body>
 </html>

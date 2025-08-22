@@ -38,6 +38,31 @@
                 echo "<script> alert('Usuário não encontrado!'); </script>";
             }
         }
+    } elseif ($_SERVER['REQUEST_METHOD'] == 'GET') {
+        if (!empty($_GET['id'])) {
+            $busca = trim($_GET['id']);
+
+            // VERIFICA SE A BUSCA É UM id OU UM nome
+            if(is_numeric($busca)) {
+                $query = "SELECT * FROM usuario WHERE id_usuario = :busca";
+
+                $stmt = $pdo -> prepare($query);
+                $stmt -> bindParam(":busca", $busca, PDO::PARAM_INT);
+            } else {
+                $query = "SELECT * FROM usuario WHERE nome LIKE :busca_nome";
+
+                $stmt = $pdo -> prepare($query);
+                $stmt -> bindValue(":busca_nome", "%$busca%", PDO::PARAM_STR);
+            }
+
+            $stmt -> execute();
+            $usuario = $stmt -> fetch(PDO::FETCH_ASSOC);
+
+            // SE O USUARIO NÃO FOR ENCONTRADO, EXIBE UM ALERTA
+            if(!$usuario) {
+                echo "<script> alert('Usuário não encontrado!'); </script>";
+                }
+        }
     }
 ?>
 
@@ -48,7 +73,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alterar Usuário</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilo.css">
 
     <!-- CERTIFIQUE-SE DE QUE O JavaScript ESTÁ SENDO CARREGADO CORRETAMENTE -->
      <script src="scripts.js"></script>
@@ -96,6 +121,6 @@
         </form>
     <?php endif; ?>
 
-    <a href="principal.php">Voltar</a>
+    <a class="btn-voltar" href="principal.php">Voltar</a>
 </body>
 </html>
