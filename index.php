@@ -21,7 +21,7 @@
             $_SESSION['perfil'] = $usuario['id_perfil'];
             $_SESSION['id_usuario'] = $usuario['id_usuario'];
 
-            // VERIFICA SE A SENHA É TEMPORÁRIA
+            // VERIFICA SE A SENHA É TEMPORÁRIA (SE É true)
             if ($usuario['senha_temporaria']) {
                 // REDIRECIONA PARA A TROCA DA SENHA TEMPORÁRIA
                 header("Location: alterar_senha.php");
