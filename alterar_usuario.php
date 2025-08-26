@@ -97,7 +97,7 @@
             <input type="hidden" name="id_usuario" value="<?= htmlspecialchars($usuario['id_usuario']) ?>">
 
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome" value="<?= htmlspecialchars($usuario['nome']) ?>" required>
+            <input type="text" name="nome" id="nome" value="<?= htmlspecialchars($usuario['nome']) ?>" required onkeypress="mascara(this, somentetexto)">
 
             <label for="email">Email:</label>
             <input type="email" name="email" id="email" value="<?= htmlspecialchars($usuario['email']) ?>" required>
@@ -122,5 +122,7 @@
     <?php endif; ?>
 
     <a class="btn-voltar" href="principal.php">Voltar</a>
+
+    <script src="validacoes.js"></script>
 </body>
 </html>

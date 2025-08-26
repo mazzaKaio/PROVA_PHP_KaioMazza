@@ -35,7 +35,7 @@
         ],
 
         3 => ["Cadastrar" => ["cadastro_fornecedor.php", "cadastro_produto.php"],
-            "Buscar" => ["buscar_cliente.php", "buscar_fornecedor.php", "buscar_produto.php"],
+            "Buscar" => ["buscar_fornecedor.php", "buscar_produto.php"],
             "Alterar" => ["alterar_fornecedor.php", "alterar_produto.php"],
             "Excluir" => ["excluir_produto.php"]
         ],

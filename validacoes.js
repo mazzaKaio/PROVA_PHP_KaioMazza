@@ -47,3 +47,13 @@ function somentetexto(variavel){
 
     return variavel
 }
+
+function celular(variavel){
+    variavel = variavel.replace(/\D/g,"")
+
+    variavel = variavel.replace(/^(\d\d)(\d)/g,"($1)$2") // adiciona parenteses em volta dos dois primeiros dígitos.
+
+    variavel = variavel.replace(/(\d{4})(\d)/,"$1-$2") // adiciona hifen entre o quarto e quinto dígito
+
+    return variavel
+}
