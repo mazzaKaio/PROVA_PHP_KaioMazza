@@ -25,9 +25,9 @@
 
         try {
             $stmt -> execute();
-            echo "<script> alert('Usuário cadastrado com sucesso!'); </script>";
+            echo "<script> alert('Cliente cadastrado com sucesso!'); </script>";
         } catch (PDOException $e) {
-            echo "<script> alert('Erro ao cadastrar usuário!'); </script>";
+            echo "<script> alert('Erro ao cadastrar cliente!'); </script>";
         }
     }
 ?>
