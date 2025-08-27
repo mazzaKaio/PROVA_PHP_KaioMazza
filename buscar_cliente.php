@@ -76,7 +76,9 @@
                         <td><?= htmlspecialchars($usuario['email']); ?></td>
                         <td>
                             <a class="btn-a" href="alterar_cliente.php?id=<?=$usuario['id_cliente'];?>">Alterar</a>
-                            <a class="btn-excluir" href="excluir_cliente.php?id=<?= htmlspecialchars($usuario['id_cliente']); ?>" onclick="return confirm('Você tem certeza que deseja excluí-lo?')">Excluir</a>
+                            <?php if($_SESSION['perfil'] == 1): ?>
+                                <a class="btn-excluir" href="excluir_cliente.php?id=<?= htmlspecialchars($usuario['id_cliente']); ?>" onclick="return confirm('Você tem certeza que deseja excluí-lo?')">Excluir</a>
+                            <?php endif; ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -85,5 +87,7 @@
     <?php else: ?>
         <p class="aviso">Nenhum cliente cadastrado!</p>
     <?php endif; ?>
+
+    <a class="btn-voltar" href="principal.php">Voltar</a>
 </body>
 </html>
