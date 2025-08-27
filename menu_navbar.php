@@ -43,11 +43,13 @@
                 </li>
             <?php endforeach; ?>
 
-            <div class="logout-dropdown">
-                <li>
-                    <a href="logout.php" onclick="return confirm('Você tem certeza que deseja SAIR da página?')">Logout</a>
-                </li>
-            </div>
+            <li>
+                <a href="principal.php">Menu Principal</a>
+            </li>
+
+            <li>
+                <a href="logout.php" onclick="return confirm('Você tem certeza que deseja SAIR da página?')">Logout</a>
+            </li>
         </ul>
     </nav>
     <?php
