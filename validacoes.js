@@ -36,12 +36,6 @@ function executaMascara(){
     objeto.value = funcao(objeto.value)
 }
 
-function usuario(variavel){
-    variavel = variavel.replace(/\d/g,"")
-
-    return variavel
-}
-
 function somentetexto(variavel){
     variavel = variavel.replace(/\d/g,"")
 
