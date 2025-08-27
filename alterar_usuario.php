@@ -61,13 +61,13 @@
             // SE O USUARIO NÃO FOR ENCONTRADO, EXIBE UM ALERTA
             if(!$usuario) {
                 echo "<script> alert('Usuário não encontrado!'); </script>";
-                }
+            }
         }
     }
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

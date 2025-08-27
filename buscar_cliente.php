@@ -14,18 +14,18 @@
         $busca = trim($_POST['busca']);
 
         if (is_numeric($busca)) {
-            $query = "SELECT * FROM usuario WHERE id_cliente = :id";
+            $query = "SELECT * FROM cliente WHERE id_cliente = :id";
 
             $stmt = $pdo -> prepare($query);
             $stmt -> bindParam(':id', $busca, PDO::PARAM_INT);
         } else {
-            $query = "SELECT * FROM usuario WHERE nome_cliente LIKE :nome";
+            $query = "SELECT * FROM cliente WHERE nome_cliente LIKE :nome";
 
             $stmt = $pdo -> prepare($query);
             $stmt -> bindValue(':nome', "$busca%", PDO::PARAM_STR);
         }
     } else {
-        $query = "SELECT * FROM usuario";
+        $query = "SELECT * FROM cliente";
 
         $stmt = $pdo -> prepare($query);
     }
@@ -69,14 +69,14 @@
                 
                 <?php foreach($usuarios as $usuario): ?>
                     <tr>
-                        <td><?= htmlspecialchars($usuario['id_cliente']) ?></td>
-                        <td><?= htmlspecialchars($usuario['nome_cliente']) ?></td>
-                        <td><?= htmlspecialchars($usuario['endereco']) ?></td>
-                        <td><?= htmlspecialchars($usuario['telefone']) ?></td>
-                        <td><?= htmlspecialchars($usuario['email']) ?></td>
+                        <td><?= htmlspecialchars($usuario['id_cliente']); ?></td>
+                        <td><?= htmlspecialchars($usuario['nome_cliente']); ?></td>
+                        <td><?= htmlspecialchars($usuario['endereco']); ?></td>
+                        <td><?= htmlspecialchars($usuario['telefone']); ?></td>
+                        <td><?= htmlspecialchars($usuario['email']); ?></td>
                         <td>
-                            <a class="btn-a" href="alterar_cliente?id=<?=$usuario['id_cliente']?>">Alterar</a>
-                            <a class="btn-excluir" href="excluir_usuario.php?id=<?= htmlspecialchars($usuario['id_cliente']) ?>" onclick="return confirm('Você tem certeza que deseja excluí-lo?')">Excluir</a>
+                            <a class="btn-a" href="alterar_cliente.php?id=<?=$usuario['id_cliente'];?>">Alterar</a>
+                            <a class="btn-excluir" href="excluir_cliente.php?id=<?= htmlspecialchars($usuario['id_cliente']); ?>" onclick="return confirm('Você tem certeza que deseja excluí-lo?')">Excluir</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
