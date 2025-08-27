@@ -123,6 +123,8 @@
 
     <a class="btn-voltar" href="principal.php">Voltar</a>
 
+    <?php include_once 'rodape.php'; ?>
+
     <script src="validacoes.js"></script>
 </body>
 </html>

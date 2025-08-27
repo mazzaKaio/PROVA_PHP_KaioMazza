@@ -61,5 +61,7 @@
     </form>
 
     <p><a class="btn-a" href="recuperar_senha.php">Esqueci minha senha</a></p>
+
+    <?php include_once 'rodape.php'; ?>
 </body>
 </html>

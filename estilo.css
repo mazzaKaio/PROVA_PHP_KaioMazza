@@ -277,4 +277,8 @@ button:hover {
     background-color: #ccc;
 }
 
-
+address {
+    position: absolute;
+    background-color: #5997da;
+    bottom: 0;
+}

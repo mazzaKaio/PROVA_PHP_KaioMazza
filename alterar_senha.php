@@ -68,6 +68,8 @@
         <button type="submit">Salvar nova senha</button>
     </form>
 
+    <?php include_once 'rodape.php'; ?>
+
     <script>
         function mostrarSenha() {
             var senha1 = document.getElementById('nova_senha');

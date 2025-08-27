@@ -88,5 +88,7 @@
             <?php endforeach; ?>
         </ul>
     </nav>
+
+    <?php include_once 'rodape.php'; ?>
 </body>
 </html>
